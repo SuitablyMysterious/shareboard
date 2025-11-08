@@ -1,0 +1,25 @@
+name: Bug Report
+description: File a bug report.
+title: "bug: "
+labels: ["type:bug", "triage:needed"]
+type: bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest this feature to us!
+  - type: textarea
+    id: what-do-you-want
+    attributes:
+      label: What would you like to see?
+      placeholder: It would be great if...
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
