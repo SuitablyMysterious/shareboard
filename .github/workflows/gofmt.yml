@@ -1,0 +1,23 @@
+name: gofmt-autofix
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+  push:
+    branches:
+      - main
+      - dev
+permissions: {}
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 1.23
+      - name: Run gofmt
+        run: |
+          gofmt -s -w .
