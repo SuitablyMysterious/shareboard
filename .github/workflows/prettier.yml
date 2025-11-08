@@ -18,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: |
-          npm install -g pnpm
-          pnpm install
-          pnpm prettier . --write
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Run prettier format
+        run: pnpm install && pnpm prettier . --write
       - uses: autofix-ci/action@v1
         with:
           commit-message: "Apply Prettier format"
