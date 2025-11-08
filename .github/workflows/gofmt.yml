@@ -1,4 +1,4 @@
-name: gofmt-autofix
+name: autofix.ci
 on:
   pull_request:
     branches:
