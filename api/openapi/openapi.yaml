@@ -1,0 +1,26 @@
+openapi: 3.1.0
+info:
+  title: Shareboard API
+  description: |
+    This API is for the main server of shareboard.
+  version: 1.0.0
+paths:
+  /rooms/{room_id}:
+    get:
+      summary: Checks if a room exists.
+      description: Checks if a particular room exists and if it is password protected.
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exists:
+                    type: boolean
+                    description: Does the specified
+                  id:
+                    type: string
+                  password_protected:
+                    type: boolean
